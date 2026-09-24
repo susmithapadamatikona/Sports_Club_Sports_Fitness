@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Stackly — neumorphism (soft UI)
+   Neumorphism only reads well when an element shares its background colour, so it is
+   applied to the light-grey areas (cards, forms, controls, dashboard) and — in a darker
+   variant — to cards and controls in the dark sections. Photos, hero banners and the
+   lime call-to-action buttons stay as they are.
+   ========================================================================== */
+:root {
+  /* light surface (page grey) */
+  --neu-bg: #f4f5f8;
+  --neu-hi: #ffffff;
+  --neu-lo: rgba(166, 180, 200, .55);
+  --neu-out: 8px 8px 18px var(--neu-lo), -8px -8px 18px var(--neu-hi);
+  --neu-out-sm: 4px 4px 10px var(--neu-lo), -4px -4px 10px var(--neu-hi);
+  --neu-out-lg: 14px 14px 30px var(--neu-lo), -12px -12px 26px var(--neu-hi);
+  --neu-in: inset 4px 4px 9px var(--neu-lo), inset -4px -4px 9px var(--neu-hi);
+  --neu-in-sm: inset 2px 2px 5px var(--neu-lo), inset -2px -2px 5px var(--neu-hi);
+  /* dark surface (navy sections) */
+  --neu-d-hi: rgba(255, 255, 255, .045);
+  --neu-d-lo: rgba(0, 0, 0, .6);
+  --neu-d-out: 8px 8px 18px var(--neu-d-lo), -6px -6px 16px var(--neu-d-hi);
+  --neu-d-out-sm: 4px 4px 10px var(--neu-d-lo), -3px -3px 8px var(--neu-d-hi);
+  --neu-d-in: inset 3px 3px 8px var(--neu-d-lo), inset -3px -3px 8px var(--neu-d-hi);
+}
+
+/* ---------- Raised cards on the light-grey page ---------- */
+.stat-card, .info-card, .contact-form, .coach-card, .t-card, .featured, .side-event, .past-card,
+.side-box, .side-news, .post-card, .tile, .panel, .dev-card, .past-mini-card {
+  background: var(--neu-bg);
+  border-color: transparent;
+  box-shadow: var(--neu-out);
+  transition: box-shadow .35s ease, transform .35s ease, border-color .3s ease;
+}
+.stat-card:hover, .info-card:hover, .coach-card:hover, .t-card:hover, .side-event:hover, .past-card:hover,
+.post-card:hover, .tile:hover, .dev-card:hover, .past-mini-card:hover { box-shadow: var(--neu-out-lg); }
+.dev-card.is-reg { border-color: #b9e84a; }
+.map-box { border-color: transparent; box-shadow: var(--neu-out); padding: 8px; background: var(--neu-bg); }
+.map-box iframe { border-radius: 6px; }
+
+/* cards nested inside a raised panel get a gentler lift */
+.panel .dev-card, .panel .past-mini-card, .dash-list li, .quick-grid a { box-shadow: var(--neu-out-sm); border-color: transparent; background: var(--neu-bg); }
+.dash-list li:hover, .quick-grid a:hover { box-shadow: var(--neu-out); border-color: transparent; background: var(--neu-bg); }
+.quick-grid a:active, .dash-list li:active { box-shadow: var(--neu-in-sm); }
+
+/* ---------- Soft icon wells ---------- */
+.stat-icon, .tile-icon, .f-icon, .value img, .info-icon { box-shadow: var(--neu-out-sm); }
+.profile-facts li { border-color: transparent; box-shadow: var(--neu-in-sm); }
+
+/* ---------- Pressed-in form fields ---------- */
+.contact-form input, .contact-form select, .contact-form textarea,
+.profile-form input, .blog-search {
+  background: var(--neu-bg); border-color: transparent; box-shadow: var(--neu-in);
+}
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus, .profile-form input:focus {
+  background: var(--neu-bg); border-color: #b9e84a; box-shadow: var(--neu-in), 0 0 0 3px rgba(195, 245, 60, .25);
+}
+.contact-form .invalid { border-color: #ef4444; }
+.blog-toolbar .blog-search { background: #f4f5f8; }
+.side-news form { background: var(--neu-bg); box-shadow: var(--neu-in); }
+
+/* ---------- Soft buttons, pills and tabs ---------- */
+.btn-ghost, .tag-chip, .chip, .pagination button, .chev, .dash-menu, .seg button.active {
+  background: var(--neu-bg); border-color: transparent; box-shadow: var(--neu-out-sm);
+  transition: box-shadow .25s ease, color .2s, background .2s, transform .2s;
+}
+.btn-ghost:hover, .chip:hover, .pagination button:hover, .dash-menu:hover { box-shadow: var(--neu-out); border-color: transparent; }
+.btn-ghost:active, .chip:active, .pagination button:active, .dash-menu:active { box-shadow: var(--neu-in-sm); }
+.chip.active { background: #0c1013; color: var(--lime); box-shadow: var(--neu-in-sm), var(--neu-out-sm); }
+.pagination button.active { box-shadow: var(--neu-out-sm); }
+.seg { background: var(--neu-bg); box-shadow: var(--neu-in-sm); }
+.side-event:hover .chev { box-shadow: none; }
+
+/* ---------- Login & Sign up: a soft-UI form panel ---------- */
+.login-page .login-panel { background: var(--neu-bg); }
+.field { background: var(--neu-bg); border-color: transparent; box-shadow: var(--neu-in); }
+.field:focus-within { border-color: #b9e84a; box-shadow: var(--neu-in), 0 0 0 3px rgba(195, 245, 60, .25); }
+.field.invalid { border-color: #ef4444; }
+.google-btn { background: var(--neu-bg); border-color: transparent; box-shadow: var(--neu-out-sm); }
+.google-btn:hover { background: var(--neu-bg); box-shadow: var(--neu-out); }
+.google-btn:active { box-shadow: var(--neu-in-sm); }
+.role-options span { background: var(--neu-bg); border-color: transparent; box-shadow: var(--neu-out-sm); }
+.role-options label:hover span { border-color: transparent; box-shadow: var(--neu-out); }
+.role-options input:checked + span { background: var(--neu-bg); border-color: #9bd11e; box-shadow: var(--neu-in); }
+.login-submit { box-shadow: 6px 6px 14px var(--neu-lo), -6px -6px 14px var(--neu-hi); }
+.login-submit:active { box-shadow: inset 3px 3px 8px rgba(80, 110, 0, .35), inset -3px -3px 8px rgba(255, 255, 255, .45); }
+
+/* ---------- Dark sections: the same idea on navy ---------- */
+.fac-card { background: var(--navy); border-color: transparent; box-shadow: var(--neu-d-out); }
+.event-card { background: #0c1013; border-color: transparent; box-shadow: var(--neu-d-out); }
+.team-card { background: #071017; border-color: transparent; box-shadow: var(--neu-d-out); }
+.fac-card:hover, .event-card:hover, .team-card:hover { border-color: transparent; box-shadow: var(--neu-d-out), 0 0 0 1px rgba(195, 245, 60, .35); }
+.filters button { background: #0c1013; box-shadow: var(--neu-d-out-sm); }
+.filters button:hover { background: #0c1013; box-shadow: var(--neu-d-out); }
+.filters button.active { background: var(--lime); box-shadow: var(--neu-d-in); }
+.f-socials a { background: #0c1013; border-color: transparent; box-shadow: var(--neu-d-out-sm); color: #d1d5db; }
+.f-socials a:active { box-shadow: var(--neu-d-in); }
+.side-user { background: #0c1013; border-color: transparent; box-shadow: var(--neu-d-in); }
+.dash-nav a:hover { box-shadow: var(--neu-d-in); }
+.dash-logout:hover { box-shadow: var(--neu-d-in); }
+
+/* keep phones light: softer shadows so small screens don't look muddy */
+@media (max-width: 600px) {
+  :root {
+    --neu-out: 5px 5px 12px var(--neu-lo), -5px -5px 12px var(--neu-hi);
+    --neu-out-lg: 8px 8px 18px var(--neu-lo), -7px -7px 16px var(--neu-hi);
+  }
+}

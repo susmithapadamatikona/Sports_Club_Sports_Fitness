@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – Stackly Sports Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="blog.css" />
+  <link rel="stylesheet" href="neumorphism.css" />
+  <link rel="stylesheet" href="animations.css" />
+</head>
+<body>
+
+  <!-- Page preloader -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
+    <div class="preloader-inner">
+      <img src="images/logo.webp" alt="Stackly" class="preloader-logo" />
+      <span class="preloader-bar"><i></i></span>
+    </div>
+  </div>
+
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M4 9h4v11H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v1.6c.6-1 1.9-1.9 3.7-1.9 3.4 0 4.3 2.2 4.3 5.3V20h-4v-5.4c0-1.4-.3-2.6-1.8-2.6-1.6 0-2.2 1.2-2.2 2.6V20h-4z" fill="currentColor"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4h4.5l4 5.6L17.5 4H20l-6.3 7.3L20.5 20H16l-4.3-6-5.3 6H4l6.6-7.6z" fill="currentColor"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4h11l-2 4 2 4H8M10 12v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M9 10v.01M15 10v.01M9 15c1.8 1.3 4.2 1.3 6 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-build" viewBox="0 0 24 24"><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17M3 21h18M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z" fill="currentColor"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M6 7v10M3 9v6M18 7v10M21 9v6M6 12h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24"><path d="M12 7c-2-1.5-6-1-6.5 3.5C5 15 8 20 10 20c1 0 1.2-.5 2-.5s1 .5 2 .5c2 0 5-5 4.5-9.5C18 6 14 5.5 12 7zM12 7c0-2 1-3.5 3-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-news" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 9V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3M4 14h16" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 0 6-6c0-3-2-5-3-7-1 2-2 3-3 3 0-3-1-5-3-7 0 4-3 6-3 11a6 6 0 0 0 6 6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero hero-blog" id="home">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html" class="active">Blogs</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li class="nav-auth">
+          <a href="login.html" class="nav-auth-login">Login</a>
+          <a href="signup.html" class="nav-auth-signup">Sign up</a>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="nav-login">Login</a>
+        <a href="signup.html" class="btn btn-lime nav-signup">Sign up</a>
+        <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <div class="blog-hero-content">
+      <span class="blog-eyebrow">OUR BLOG</span>
+      <h1>FITNESS. SPORTS.<br /><span class="lime">LIFESTYLE.</span></h1>
+      <p>Get expert tips, training guides, nutrition advice, community stories and more. Stay inspired and keep moving forward.</p>
+    </div>
+
+    <div class="hero-script blog-script" aria-hidden="true">
+      <span>Better</span>
+      <span>Every Day</span>
+      <svg viewBox="0 0 100 10" class="hero-underline"><path d="M2 8 C 35 5, 70 3, 98 2" fill="none" stroke="#b9f227" stroke-width="3.5" stroke-linecap="round"/></svg>
+    </div>
+  </header>
+
+  <!-- ============ SEARCH / SORT ============ -->
+  <div class="blog-toolbar">
+    <label class="blog-search">
+      <svg><use href="#i-search"/></svg>
+      <input type="search" id="blogSearch" placeholder="Search articles..." aria-label="Search articles" />
+    </label>
+    <label class="blog-sort">
+      <span>Sort by:</span>
+      <select id="blogSort" aria-label="Sort posts">
+        <option value="latest">Latest Posts</option>
+        <option value="oldest">Oldest Posts</option>
+      </select>
+      <svg><use href="#i-down"/></svg>
+    </label>
+  </div>
+
+  <!-- ============ BLOG BODY ============ -->
+  <section class="blog-main">
+    <aside class="blog-side">
+      <div class="side-box categories">
+        <h3>Categories</h3>
+        <ul id="blogCats">
+            <li><button data-cat="training"><svg><use href="#i-dumbbell"/></svg><span>Training Tips</span><em>12</em><svg class="c-chev"><use href="#i-chev"/></svg></button></li>
+            <li><button data-cat="nutrition"><svg><use href="#i-apple"/></svg><span>Nutrition</span><em>8</em><svg class="c-chev"><use href="#i-chev"/></svg></button></li>
+            <li><button data-cat="fitness"><svg><use href="#i-heart"/></svg><span>Fitness & Health</span><em>10</em><svg class="c-chev"><use href="#i-chev"/></svg></button></li>
+            <li><button data-cat="sports-news"><svg><use href="#i-news"/></svg><span>Sports News</span><em>6</em><svg class="c-chev"><use href="#i-chev"/></svg></button></li>
+            <li><button data-cat="lifestyle"><svg><use href="#i-bolt"/></svg><span>Lifestyle</span><em>7</em><svg class="c-chev"><use href="#i-chev"/></svg></button></li>
+            <li><button data-cat="motivation"><svg><use href="#i-flame"/></svg><span>Motivation</span><em>5</em><svg class="c-chev"><use href="#i-chev"/></svg></button></li>
+            <li><button data-cat="events"><svg><use href="#i-cal"/></svg><span>Events</span><em>4</em><svg class="c-chev"><use href="#i-chev"/></svg></button></li>
+        </ul>
+      </div>
+
+      <div class="newsletter side-news">
+        <div class="news-top">
+          <h5>Stay Up To Date</h5>
+          <p>Get the latest articles, tips and exclusive content straight to your inbox.</p>
+        </div>
+        <form>
+          <input type="email" placeholder="Stackly@gmail.com" aria-label="Email address" required />
+          <button class="btn btn-lime" type="submit">Subscribe</button>
+        </form>
+        <small class="news-msg"></small>
+      </div>
+    </aside>
+
+    <div class="blog-content">
+      <article class="featured-post" data-cat="training">
+        <img src="images/blog-featured.webp" alt="Sprinter bursting out of the starting blocks" />
+        <div class="featured-post-text">
+          <span class="post-pill big">TRAINING</span>
+          <h2>5 Essential Warm-Up Exercises Before Your Workout</h2>
+          <div class="post-meta light"><span><svg><use href="#i-cal"/></svg>May 12, 2025</span><span><svg><use href="#i-clock"/></svg>5 min read</span></div>
+          <p>A proper warm-up boosts performance, prevents injuries and gets your body ready for the challenge.</p>
+          <a href="404.html" class="read-more lime">Read More <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <div class="post-grid" id="postGrid">
+        <article class="post-card" data-cat="nutrition" data-date="2025-05-08">
+          <div class="post-photo"><img src="images/blog-nutrition.webp" alt="" /><span class="post-pill">NUTRITION</span></div>
+          <div class="post-body">
+            <h3>Fuel Your Performance: The Right Foods for Athletes</h3>
+            <div class="post-meta"><span><svg><use href="#i-cal"/></svg>May 8, 2025</span><span><svg><use href="#i-clock"/></svg>4 min read</span></div>
+            <p>Discover the best nutrition tips to fuel your workouts, build strength and stay energized throughout the day.</p>
+            <a href="404.html" class="read-more">Read More <svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="post-card" data-cat="training" data-date="2025-05-05">
+          <div class="post-photo"><img src="images/blog-strength.webp" alt="" /><span class="post-pill">TRAINING</span></div>
+          <div class="post-body">
+            <h3>Build Strength: A Beginner's Guide to Weight Training</h3>
+            <div class="post-meta"><span><svg><use href="#i-cal"/></svg>May 5, 2025</span><span><svg><use href="#i-clock"/></svg>6 min read</span></div>
+            <p>Learn the basics of strength training, proper form and how to create a simple workout routine to get started.</p>
+            <a href="404.html" class="read-more">Read More <svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="post-card" data-cat="sports-news" data-date="2025-05-02">
+          <div class="post-photo"><img src="images/blog-football.webp" alt="" /><span class="post-pill">SPORTS NEWS</span></div>
+          <div class="post-body">
+            <h3>Football Tactics That Win Matches</h3>
+            <div class="post-meta"><span><svg><use href="#i-cal"/></svg>May 2, 2025</span><span><svg><use href="#i-clock"/></svg>4 min read</span></div>
+            <p>Explore key strategies, formations and player roles that make a difference on the field.</p>
+            <a href="404.html" class="read-more">Read More <svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="post-card" data-cat="lifestyle" data-date="2025-04-28">
+          <div class="post-photo"><img src="images/blog-habits.webp" alt="" /><span class="post-pill">LIFESTYLE</span></div>
+          <div class="post-body">
+            <h3>Small Habits for a Healthier, Happier You</h3>
+            <div class="post-meta"><span><svg><use href="#i-cal"/></svg>Apr 28, 2025</span><span><svg><use href="#i-clock"/></svg>5 min read</span></div>
+            <p>Simple daily habits can lead to big changes in your energy, mood and overall well-being.</p>
+            <a href="404.html" class="read-more">Read More <svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="post-card" data-cat="events" data-date="2025-04-25">
+          <div class="post-photo"><img src="images/blog-championship.webp" alt="" /><span class="post-pill">EVENTS</span></div>
+          <div class="post-body">
+            <h3>Join Our Upcoming Sports Championship</h3>
+            <div class="post-meta"><span><svg><use href="#i-cal"/></svg>Apr 25, 2025</span><span><svg><use href="#i-clock"/></svg>3 min read</span></div>
+            <p>Be part of the biggest sports event of the year. Open for all members. Register now!</p>
+            <a href="404.html" class="read-more">Read More <svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="post-card" data-cat="motivation" data-date="2025-04-22">
+          <div class="post-photo"><img src="images/blog-discipline.webp" alt="" /><span class="post-pill">MOTIVATION</span></div>
+          <div class="post-body">
+            <h3>Discipline Builds Freedom</h3>
+            <div class="post-meta"><span><svg><use href="#i-cal"/></svg>Apr 22, 2025</span><span><svg><use href="#i-clock"/></svg>4 min read</span></div>
+            <p>It's not about being perfect. It's about showing up, again and again.</p>
+            <a href="404.html" class="read-more">Read More <svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <p class="no-posts" id="noPosts" hidden>No articles match your search. Try another keyword or category.</p>
+      </div>
+
+      <nav class="pagination" id="pagination" aria-label="Blog pages">
+        <button class="pg-arrow" data-dir="-1" aria-label="Previous page"><svg><use href="#i-left"/></svg></button>
+        <button class="active">1</button><button>2</button><button>3</button><button>4</button><button>5</button>
+        <button class="pg-arrow" data-dir="1" aria-label="Next page"><svg><use href="#i-chev"/></svg></button>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="f-brand">
+        <a href="index.html" class="f-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+        <p class="f-about">More than just a club — a community of athletes, coaches and families. Train with expert coaches, book world-class facilities and compete in events all year round, all from one place.</p>
+        <div class="f-socials">
+          <a href="404.html" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4h4.5l4 5.6L17.5 4H20l-6.3 7.3L20.5 20H16l-4.3-6-5.3 6H4l6.6-7.6z" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4 9h4v11H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v1.6c.6-1 1.9-1.9 3.7-1.9 3.4 0 4.3 2.2 4.3 5.3V20h-4v-5.4c0-1.4-.3-2.6-1.8-2.6-1.6 0-2.2 1.2-2.2 2.6V20h-4z" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.4-1.2.4-3.8.4-3.8s0-2.6-.4-3.8zM10 15V9l5.2 3z" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+        <nav class="f-col" aria-label="Sports">
+          <h5>SPORTS</h5>
+          <ul>
+            <li><a href="404.html">Football</a></li>
+            <li><a href="404.html">Basketball</a></li>
+            <li><a href="404.html">Badminton</a></li>
+            <li><a href="404.html">Tennis</a></li>
+            <li><a href="404.html">Swimming</a></li>
+          </ul>
+        </nav>
+
+        <nav class="f-col" aria-label="Club">
+          <h5>CLUB</h5>
+          <ul>
+            <li><a href="404.html">About Us</a></li>
+            <li><a href="404.html">Our Coaches</a></li>
+            <li><a href="404.html">Facilities</a></li>
+            <li><a href="404.html">Events</a></li>
+            <li><a href="404.html">Membership</a></li>
+          </ul>
+        </nav>
+
+        <nav class="f-col" aria-label="Support">
+          <h5>SUPPORT</h5>
+          <ul>
+            <li><a href="404.html">Contact Us</a></li>
+            <li><a href="404.html">Book a Session</a></li>
+            <li><a href="404.html">Member Login</a></li>
+            <li><a href="404.html">Join Now</a></li>
+            <li><a href="404.html">FAQ</a></li>
+          </ul>
+        </nav>
+
+      <div class="f-col f-reach">
+        <h5>CONTACT</h5>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>123, Green Street, Coimbatore,<br />Tamil Nadu - 641001, India</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+911234567890">+91 12345 67890</a></li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="mailto:Stackly@gmail.com">Stackly@gmail.com</a></li>
+          <li class="f-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mon – Sat: 9:00 AM – 7:00 PM<br />Sunday: 9:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Stackly Sports Club. All rights reserved.</span>
+      <div><a href="#">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="animations.js"></script>
+  <script src="preloader.js"></script>
+</body>
+</html>

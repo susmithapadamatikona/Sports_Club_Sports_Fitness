@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stackly – Sports Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="neumorphism.css" />
+  <link rel="stylesheet" href="animations.css" />
+</head>
+<body>
+
+  <!-- Page preloader -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
+    <div class="preloader-inner">
+      <img src="images/logo.webp" alt="Stackly" class="preloader-logo" />
+      <span class="preloader-bar"><i></i></span>
+    </div>
+  </div>
+
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M4 9h4v11H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v1.6c.6-1 1.9-1.9 3.7-1.9 3.4 0 4.3 2.2 4.3 5.3V20h-4v-5.4c0-1.4-.3-2.6-1.8-2.6-1.6 0-2.2 1.2-2.2 2.6V20h-4z" fill="currentColor"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4h4.5l4 5.6L17.5 4H20l-6.3 7.3L20.5 20H16l-4.3-6-5.3 6H4l6.6-7.6z" fill="currentColor"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4h11l-2 4 2 4H8M10 12v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M9 10v.01M15 10v.01M9 15c1.8 1.3 4.2 1.3 6 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-build" viewBox="0 0 24 24"><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17M3 21h18M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z" fill="currentColor"/></symbol>
+  </svg>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="home">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li class="nav-auth">
+          <a href="login.html" class="nav-auth-login">Login</a>
+          <a href="signup.html" class="nav-auth-signup">Sign up</a>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="nav-login">Login</a>
+        <a href="signup.html" class="btn btn-lime nav-signup">Sign up</a>
+        <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">SPORTS CLUB</span>
+      <h1 class="hero-title">
+        <span>TRAIN</span>
+        <span>COMPETE</span>
+        <span class="lime">CONNECT</span>
+      </h1>
+      <p class="hero-text">More than just a club — we’re a community of athletes, <br />dreamers and doers.</p>
+      <div class="hero-btns">
+        <a href="404.html" class="btn btn-lime btn-glow">Join the Club <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a href="404.html" class="btn btn-outline">Explore Sports</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong data-count="15">15+</strong><span>Sports</span></div>
+        <div><strong data-count="25">25+</strong><span>Coaches</span></div>
+        <div><strong data-count="2500">2,500+</strong><span>Members</span></div>
+      </div>
+    </div>
+
+    <div class="hero-script" aria-hidden="true">
+      <span>Better</span>
+      <span>Every Day</span>
+      <svg viewBox="0 0 100 10" class="hero-underline"><path d="M2 8 C 35 5, 70 3, 98 2" fill="none" stroke="#b9f227" stroke-width="3.5" stroke-linecap="round"/></svg>
+    </div>
+  </header>
+
+  <!-- ============ SPORTS ============ -->
+  <section class="sports" id="sports">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">OUR SPORTS</span>
+          <h2>Find Your Game</h2>
+          <p class="sub">From team sports to individual pursuits, we have something for every passion.</p>
+        </div>
+        <a href="404.html" class="head-link">Explore All Sports <svg class="ico"><use href="#i-chev"/></svg></a>
+      </div>
+    </div>
+    <div class="sports-grid">
+      <a href="404.html" class="sport-card"><img src="images/sport-football.webp" alt="Football" /><div class="sport-info"><h4>Football</h4><span>Explore →</span></div></a>
+      <a href="404.html" class="sport-card"><img src="images/sport-basketball.webp" alt="Basketball" /><div class="sport-info"><h4>Basketball</h4><span>Explore →</span></div></a>
+      <a href="404.html" class="sport-card"><img src="images/sport-badminton.webp" alt="Badminton" /><div class="sport-info"><h4>Badminton</h4><span>Explore →</span></div></a>
+      <a href="404.html" class="sport-card"><img src="images/sport-tennis.webp" alt="Tennis" /><div class="sport-info"><h4>Tennis</h4><span>Explore →</span></div></a>
+      <a href="404.html" class="sport-card"><img src="images/sport-swimming.webp" alt="Swimming" /><div class="sport-info"><h4>Swimming</h4><span>Explore →</span></div></a>
+      <a href="404.html" class="sport-card"><img src="images/sport-fitness.webp" alt="Fitness" /><div class="sport-info"><h4>Fitness</h4><span>Explore →</span></div></a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-media">
+        <svg class="about-arc" viewBox="0 0 100 100" aria-hidden="true"><path d="M4 94 C 4 45, 40 8, 88 4" fill="none" stroke="#b9f227" stroke-width="6" stroke-linecap="round"/></svg>
+        <img src="images/about.webp" alt="Team huddle on the football field" />
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">ABOUT OUR CLUB</span>
+        <h2>More Than Just a Club</h2>
+        <p>We are a community of passionate athletes, united by a love for sports, fitness and a healthier lifestyle. Our club provides world-class facilities, expert coaching and a supportive environment for everyone — from beginners to professionals.</p>
+        <div class="about-features">
+          <div class="feature"><span class="f-icon"><svg><use href="#i-flag"/></svg></span><strong>10+</strong><small>Years of Excellence</small></div>
+          <div class="feature"><span class="f-icon"><svg><use href="#i-scan"/></svg></span><strong>Professional</strong><small>Training</small></div>
+          <div class="feature"><span class="f-icon"><svg><use href="#i-build"/></svg></span><strong>World-Class</strong><small>Facilities</small></div>
+        </div>
+        <a href="404.html" class="btn btn-ghost">Discover Our Story <span class="lime-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FACILITIES ============ -->
+  <section class="facilities" id="facilities">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow lime">OUR FACILITIES</span>
+          <h2 class="white">Built for Better Performance</h2>
+        </div>
+        <a href="404.html" class="head-link white">Explore All Facilities →</a>
+      </div>
+      <div class="fac-grid">
+        <div class="fac-card"><img src="images/facility-gym.webp" alt="Modern Gym" /><h4>Modern Gym</h4></div>
+        <div class="fac-card"><img src="images/facility-courts.webp" alt="Indoor Courts" /><h4>Indoor Courts</h4></div>
+        <div class="fac-card"><img src="images/facility-football-ground.webp" alt="Football Ground" /><h4>Football Ground</h4></div>
+        <div class="fac-card"><img src="images/facility-pool.webp" alt="Swimming Pool" /><h4>Swimming Pool</h4></div>
+        <div class="fac-card"><img src="images/facility-training.webp" alt="Training Zone" /><h4>Training Zone</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COACHES ============ -->
+  <section class="coaches">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">OUR COACHES</span>
+          <h2>Learn from the Best</h2>
+        </div>
+        <a href="404.html" class="head-link">Meet All Coaches →</a>
+      </div>
+      <div class="coach-grid">
+        <div class="coach-card">
+          <img src="images/coach-arjun.webp" alt="Arjun Sharma" />
+          <div class="coach-body"><h4>Arjun Sharma</h4><span class="role">Football</span><span class="exp">8+ Years Experience</span>
+            <div class="socials"><a href="404.html" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a href="404.html" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a><a href="404.html" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a></div></div>
+        </div>
+        <div class="coach-card">
+          <img src="images/coach-priya.webp" alt="Priya Nair" />
+          <div class="coach-body"><h4>Priya Nair</h4><span class="role">Tennis</span><span class="exp">6+ Years Experience</span>
+            <div class="socials"><a href="404.html" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a href="404.html" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a><a href="404.html" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a></div></div>
+        </div>
+        <div class="coach-card">
+          <img src="images/coach-rohit.webp" alt="Rohit Menon" />
+          <div class="coach-body"><h4>Rohit Menon</h4><span class="role">Badminton</span><span class="exp">7+ Years Experience</span>
+            <div class="socials"><a href="404.html" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a href="404.html" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a><a href="404.html" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a></div></div>
+        </div>
+        <div class="coach-card">
+          <img src="images/coach-sneha.webp" alt="Sneha Iyer" />
+          <div class="coach-body"><h4>Sneha Iyer</h4><span class="role">Fitness</span><span class="exp">5+ Years Experience</span>
+            <div class="socials"><a href="404.html" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a href="404.html" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a><a href="404.html" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENTS ============ -->
+  <section class="events" id="events">
+    <div class="container events-grid">
+      <div class="events-left">
+        <span class="pill-tag">UPCOMING EVENTS</span>
+        <h2 id="evTitle">Inter club -<br />championship 2026</h2>
+        <p id="evDesc">A thrilling competition featuring top athletes across multiple sports. Be there and witness the best in action!</p>
+        <div class="events-bottom">
+          <div class="ev-meta">
+            <span><svg class="ico"><use href="#i-cal"/></svg> <em id="evDate">Oct 18, 2026</em></span>
+            <span><svg class="ico"><use href="#i-pin"/></svg> <em id="evPlace">Main Sports Arena</em></span>
+          </div>
+          <a href="404.html" class="btn btn-lime ev-btn">View All Events <svg class="ico"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="events-right">
+        <div class="ev-feature"><img id="evImg" src="images/event-championship.webp" alt="Championship spectators" /></div>
+        <div class="ev-list">
+          <button class="ev-item" data-title="City<br />Marathon 2026" data-desc="Run through the heart of the city with thousands of runners. All levels welcome — from 5K to the full marathon." data-date="Nov 12, 2026" data-place="City Centre" data-img="images/event-marathon.webp">
+            <img src="images/event-marathon.webp" alt="" /><div><strong>City Marathon</strong><small>Nov 12, 2026</small></div>
+          </button>
+          <button class="ev-item" data-title="Tennis<br />Open 2026" data-desc="Our annual open tournament bringing together the club’s finest singles and doubles players." data-date="Dec 6, 2026" data-place="Indoor Courts" data-img="images/event-tennis.webp">
+            <img src="images/event-tennis.webp" alt="" /><div><strong>Tennis Open</strong><small>Dec 6, 2026</small></div>
+          </button>
+          <button class="ev-item" data-title="Swimming<br />Gala 2027" data-desc="Sprint, relay and medley races for juniors and seniors in our Olympic-size pool." data-date="Jan 15, 2027" data-place="Aquatic Centre" data-img="images/event-swimming.webp">
+            <img src="images/event-swimming.webp" alt="" /><div><strong>Swimming Gala</strong><small>Jan 15, 2027</small></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MEMBERSHIP ============ -->
+  <section class="membership" id="membership">
+    <div class="container member-inner">
+      <div>
+        <span class="eyebrow lime">MEMBERSHIP</span>
+        <h2 class="member-title">YOUR <span class="lime">NEXT LEVEL</span> STARTS HERE.</h2>
+        <p>Join a community that pushes you to train harder, perform better and enjoy every game.</p>
+      </div>
+      <a href="404.html" class="btn btn-lime btn-glow">Become a Member <svg class="ico"><use href="#i-arrow"/></svg></a>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials" id="testimonials">
+    <div class="t-head">
+      <span class="tag-chip">Testimonial</span>
+      <h2>What Our Clients Say</h2>
+      <p>Showcasing the results of our commitment to quality, innovation, and <br />sustainable growth.</p>
+    </div>
+    <div class="container t-grid">
+      <article class="t-card">
+        <div class="t-top"><span>4.9 Out of 5.0</span><span class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span></div>
+        <p>“Joining Stackly has transformed how our family stays active. The coaches are brilliant, the facilities are spotless, and the team guided us every step of the way — from our first session to our first race.”</p>
+        <div class="t-author"><img src="images/avatar-brooklyn.webp" alt="" /><div><strong>Brooklyn Simmons</strong><small>Member since 2022</small></div></div>
+      </article>
+
+      <figure class="t-img">
+        <img src="images/testimonial-2.webp" alt="Jane Cooper, CEO — Stackly member" />
+      </figure>
+
+      <article class="t-card">
+        <div class="t-top"><span>5.0 Out of 5.0</span><span class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span></div>
+        <p>“The training programmes pushed me to a level I didn't know I could reach. Great coaches, great people and an atmosphere that makes you want to come back every single day.”</p>
+        <div class="t-author"><img src="images/avatar-arjun-mehta.webp" alt="" /><div><strong>Arjun Mehta</strong><small>Football Player</small></div></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="f-brand">
+        <a href="index.html" class="f-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+        <p class="f-about">More than just a club — a community of athletes, coaches and families. Train with expert coaches, book world-class facilities and compete in events all year round, all from one place.</p>
+        <div class="f-socials">
+          <a href="404.html" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4h4.5l4 5.6L17.5 4H20l-6.3 7.3L20.5 20H16l-4.3-6-5.3 6H4l6.6-7.6z" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4 9h4v11H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v1.6c.6-1 1.9-1.9 3.7-1.9 3.4 0 4.3 2.2 4.3 5.3V20h-4v-5.4c0-1.4-.3-2.6-1.8-2.6-1.6 0-2.2 1.2-2.2 2.6V20h-4z" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.4-1.2.4-3.8.4-3.8s0-2.6-.4-3.8zM10 15V9l5.2 3z" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+        <nav class="f-col" aria-label="Sports">
+          <h5>SPORTS</h5>
+          <ul>
+            <li><a href="404.html">Football</a></li>
+            <li><a href="404.html">Basketball</a></li>
+            <li><a href="404.html">Badminton</a></li>
+            <li><a href="404.html">Tennis</a></li>
+            <li><a href="404.html">Swimming</a></li>
+          </ul>
+        </nav>
+
+        <nav class="f-col" aria-label="Club">
+          <h5>CLUB</h5>
+          <ul>
+            <li><a href="404.html">About Us</a></li>
+            <li><a href="404.html">Our Coaches</a></li>
+            <li><a href="404.html">Facilities</a></li>
+            <li><a href="404.html">Events</a></li>
+            <li><a href="404.html">Membership</a></li>
+          </ul>
+        </nav>
+
+        <nav class="f-col" aria-label="Support">
+          <h5>SUPPORT</h5>
+          <ul>
+            <li><a href="404.html">Contact Us</a></li>
+            <li><a href="404.html">Book a Session</a></li>
+            <li><a href="404.html">Member Login</a></li>
+            <li><a href="404.html">Join Now</a></li>
+            <li><a href="404.html">FAQ</a></li>
+          </ul>
+        </nav>
+
+      <div class="f-col f-reach">
+        <h5>CONTACT</h5>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>123, Green Street, Coimbatore,<br />Tamil Nadu - 641001, India</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+911234567890">+91 12345 67890</a></li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="mailto:Stackly@gmail.com">Stackly@gmail.com</a></li>
+          <li class="f-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mon – Sat: 9:00 AM – 7:00 PM<br />Sunday: 9:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Stackly Sports Club. All rights reserved.</span>
+      <div><a href="#">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="animations.js"></script>
+  <script src="preloader.js"></script>
+</body>
+</html>

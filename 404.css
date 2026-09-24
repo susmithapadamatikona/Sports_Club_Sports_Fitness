@@ -1,0 +1,35 @@
+/* 404 — Page Not Found (uses the site's hero photo, colours and buttons) */
+.hero-404 { height: auto; min-height: 100vh; min-height: 100svh; justify-content: center; }
+.hero-404::after {                          /* extra darkening so the message reads clearly */
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgba(10, 14, 20, .75) 0%, rgba(10, 14, 20, .45) 60%, rgba(10, 14, 20, .2) 100%);
+}
+.nf-content { padding: 40px 0 90px 7.85vw; max-width: 760px; }
+.nf-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--lime); font-size: 13px; font-weight: 800; letter-spacing: .14em;
+}
+.nf-eyebrow::before { content: ""; width: 18px; height: 2px; background: currentColor; border-radius: 2px; }
+.nf-code {
+  display: flex; font-size: clamp(110px, 16vw, 210px); font-weight: 900; font-style: italic;
+  line-height: .95; letter-spacing: -.05em; margin-top: 10px;
+}
+.nf-code span { display: inline-block; animation: nfBounce 2.6s ease-in-out infinite; }
+.nf-code span:nth-child(2) { animation-delay: .2s; text-shadow: 0 0 40px rgba(195, 245, 60, .45); }
+.nf-code span:nth-child(3) { animation-delay: .4s; }
+@keyframes nfBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.nf-content h2 { color: #fff; font-size: clamp(26px, 3vw, 38px); font-weight: 800; font-style: italic; letter-spacing: -.02em; margin-top: 12px; }
+.nf-content > p { color: #d4d8de; font-size: 17px; line-height: 27px; max-width: 520px; margin-top: 14px; }
+.nf-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.nf-btns .btn { height: 50px; }
+.nf-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .15); font-size: 14.5px; color: #aeb4bd; }
+.nf-links a { color: #fff; font-weight: 600; transition: color .2s; }
+.nf-links a:hover { color: var(--lime); }
+
+@media (max-width: 900px) { .nf-content { padding: 40px 24px 70px; } }
+@media (max-width: 600px) {
+  .nf-content { padding: 30px 16px 60px; }
+  .nf-content > p { font-size: 15.5px; line-height: 25px; }
+  .nf-btns .btn { flex: 1 1 auto; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .nf-code span { animation: none; } }

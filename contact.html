@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Stackly Sports Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800;1,900&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="neumorphism.css" />
+  <link rel="stylesheet" href="animations.css" />
+</head>
+<body>
+
+  <!-- Page preloader -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
+    <div class="preloader-inner">
+      <img src="images/logo.webp" alt="Stackly" class="preloader-logo" />
+      <span class="preloader-bar"><i></i></span>
+    </div>
+  </div>
+
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M4 9h4v11H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v1.6c.6-1 1.9-1.9 3.7-1.9 3.4 0 4.3 2.2 4.3 5.3V20h-4v-5.4c0-1.4-.3-2.6-1.8-2.6-1.6 0-2.2 1.2-2.2 2.6V20h-4z" fill="currentColor"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4h4.5l4 5.6L17.5 4H20l-6.3 7.3L20.5 20H16l-4.3-6-5.3 6H4l6.6-7.6z" fill="currentColor"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4h11l-2 4 2 4H8M10 12v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M9 10v.01M15 10v.01M9 15c1.8 1.3 4.2 1.3 6 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-build" viewBox="0 0 24 24"><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17M3 21h18M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z" fill="currentColor"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin-fill" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></symbol>
+    <symbol id="i-clock2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero hero-contact" id="home">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+        <li class="nav-auth">
+          <a href="login.html" class="nav-auth-login">Login</a>
+          <a href="signup.html" class="nav-auth-signup">Sign up</a>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="nav-login">Login</a>
+        <a href="signup.html" class="btn btn-lime nav-signup">Sign up</a>
+        <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <div class="contact-hero-content">
+      <span class="dash-eyebrow">GET IN TOUCH</span>
+      <h1>CONTACT<br /><span class="lime">US</span></h1>
+      <p>Have a question, suggestion or need support? We're here to help. <br />Reach out to us — we'd love to hear from you!</p>
+    </div>
+  </header>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p class="contact-sub">Reach out to us through any of these channels</p>
+        <div class="info-list">
+        <div class="info-card">
+          <span class="info-icon"><svg><use href="#i-phone"/></svg></span>
+          <div>
+            <h4>Phone</h4>
+            <a class="info-main" href="tel:+911234567890">+91 12345 67890</a>
+            <small>Mon - Sat, 9:00 AM - 7:00 PM</small>
+          </div>
+        </div>
+        <div class="info-card">
+          <span class="info-icon"><svg><use href="#i-mail"/></svg></span>
+          <div>
+            <h4>Email</h4>
+            <a class="info-mid" href="mailto:Stackly@gmail.com">Stackly@gmail.com</a>
+            <small>We reply within 24 hours</small>
+          </div>
+        </div>
+        <div class="info-card">
+          <span class="info-icon"><svg><use href="#i-pin-fill"/></svg></span>
+          <div>
+            <h4>Address</h4>
+            <p>123, Green Street, Coimbatore,<br />Tamil Nadu - 641001, India</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <span class="info-icon"><svg><use href="#i-clock2"/></svg></span>
+          <div>
+            <h4>Working Hours</h4>
+            <p>Mon - Sat: 9:00 AM - 7:00 PM<br />Sunday: 9:00 AM - 2:00 PM</p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h2>Send Us a Message</h2>
+        <p class="contact-sub">Fill out the form below and we'll get back to you</p>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row two">
+            <label>Full Name<input type="text" name="name" placeholder="Enter your name" required /></label>
+            <label>Email Address<input type="email" name="email" placeholder="Enter your email" required /></label>
+          </div>
+          <label>Phone Number<input type="tel" name="phone" placeholder="Enter your phone number" /></label>
+          <label>Subject
+            <span class="select-wrap">
+              <select name="subject" required>
+                <option value="" selected disabled>Select a subject</option>
+                <option>Membership</option>
+                <option>Coaching &amp; Training</option>
+                <option>Events</option>
+                <option>Facilities</option>
+                <option>Other</option>
+              </select>
+              <svg><use href="#i-down"/></svg>
+            </span>
+          </label>
+          <label>Message<textarea name="message" placeholder="Type your message here..." required></textarea></label>
+          <button type="submit" class="send-btn"><svg><use href="#i-send"/></svg>Send Message</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="map-box">
+      <iframe title="Stackly Sports Club location" src="https://maps.google.com/maps?q=Green%20Street%2C%20Coimbatore%2C%20Tamil%20Nadu%20641001&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="f-brand">
+        <a href="index.html" class="f-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+        <p class="f-about">More than just a club — a community of athletes, coaches and families. Train with expert coaches, book world-class facilities and compete in events all year round, all from one place.</p>
+        <div class="f-socials">
+          <a href="404.html" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4h4.5l4 5.6L17.5 4H20l-6.3 7.3L20.5 20H16l-4.3-6-5.3 6H4l6.6-7.6z" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4 9h4v11H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v1.6c.6-1 1.9-1.9 3.7-1.9 3.4 0 4.3 2.2 4.3 5.3V20h-4v-5.4c0-1.4-.3-2.6-1.8-2.6-1.6 0-2.2 1.2-2.2 2.6V20h-4z" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.4-1.2.4-3.8.4-3.8s0-2.6-.4-3.8zM10 15V9l5.2 3z" fill="currentColor"/></svg></a>
+          <a href="404.html" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+
+        <nav class="f-col" aria-label="Sports">
+          <h5>SPORTS</h5>
+          <ul>
+            <li><a href="404.html">Football</a></li>
+            <li><a href="404.html">Basketball</a></li>
+            <li><a href="404.html">Badminton</a></li>
+            <li><a href="404.html">Tennis</a></li>
+            <li><a href="404.html">Swimming</a></li>
+          </ul>
+        </nav>
+
+        <nav class="f-col" aria-label="Club">
+          <h5>CLUB</h5>
+          <ul>
+            <li><a href="404.html">About Us</a></li>
+            <li><a href="404.html">Our Coaches</a></li>
+            <li><a href="404.html">Facilities</a></li>
+            <li><a href="404.html">Events</a></li>
+            <li><a href="404.html">Membership</a></li>
+          </ul>
+        </nav>
+
+        <nav class="f-col" aria-label="Support">
+          <h5>SUPPORT</h5>
+          <ul>
+            <li><a href="404.html">Contact Us</a></li>
+            <li><a href="404.html">Book a Session</a></li>
+            <li><a href="404.html">Member Login</a></li>
+            <li><a href="404.html">Join Now</a></li>
+            <li><a href="404.html">FAQ</a></li>
+          </ul>
+        </nav>
+
+      <div class="f-col f-reach">
+        <h5>CONTACT</h5>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>123, Green Street, Coimbatore,<br />Tamil Nadu - 641001, India</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+911234567890">+91 12345 67890</a></li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="mailto:Stackly@gmail.com">Stackly@gmail.com</a></li>
+          <li class="f-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mon – Sat: 9:00 AM – 7:00 PM<br />Sunday: 9:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Stackly Sports Club. All rights reserved.</span>
+      <div><a href="#">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="animations.js"></script>
+  <script src="preloader.js"></script>
+</body>
+</html>

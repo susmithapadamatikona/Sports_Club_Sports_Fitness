@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview – Stackly Sports Club</title>
+  <script>
+    // Not logged in? Go to the login page before anything renders.
+    (function () {
+      var u = null;
+      try { u = localStorage.getItem("stacklyUser") || sessionStorage.getItem("stacklyUser"); } catch (e) {}
+      if (!u) location.replace("login.html");
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="neumorphism.css" />
+  <link rel="stylesheet" href="animations.css" />
+</head>
+<body class="dash-page" data-page="overview">
+
+  <!-- Page preloader -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
+    <div class="preloader-inner">
+      <img src="images/logo.webp" alt="Stackly" class="preloader-logo" />
+      <span class="preloader-bar"><i></i></span>
+    </div>
+  </div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="d-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="d-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="d-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="d-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3M12 14v4M8 20h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="d-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="d-out" viewBox="0 0 24 24"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 16l-4-4 4-4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="d-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="d-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0-1-5.8M17 14.5a5.5 5.5 0 0 1 4 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="d-bolt" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="d-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="d-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M7 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="d-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="d-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="d-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="d-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="d-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="d-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="d-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="d-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="d-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <div class="dash">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="dash-side" id="dashSide">
+      <a href="index.html" class="dash-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+      <nav class="dash-nav" aria-label="Dashboard">
+        <a href="dashboard.html" class="active" aria-current="page"><svg><use href="#d-home"/></svg>Overview</a>
+        <a href="dash-schedule.html"><svg><use href="#d-cal"/></svg><span data-label="schedule">My Schedule</span></a>
+        <a href="dash-activity.html"><svg><use href="#d-chart"/></svg><span data-label="activity">Activity</span></a>
+        <a href="dash-events.html"><svg><use href="#d-trophy"/></svg>Events</a>
+        <a href="dash-profile.html"><svg><use href="#d-user"/></svg>My Profile</a>
+        <span class="dash-nav-sep"></span>
+        <a href="index.html"><svg><use href="#d-globe"/></svg>Back to Website</a>
+      </nav>
+      <div class="side-user">
+        <span class="avatar sm" data-user="initial">A</span>
+        <div><strong data-user="name">Athlete</strong><small data-user="email"></small></div>
+      </div>
+      <button class="dash-logout" id="logoutBtn"><svg><use href="#d-out"/></svg>Log out</button>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="dash-main">
+      <header class="dash-top">
+        <button class="dash-menu" id="dashMenu" aria-label="Open menu"><svg><use href="#d-menu"/></svg></button>
+        <div>
+          <p class="dash-date" id="dashDate"></p>
+          <h1 id="pageTitle">Overview</h1>
+        </div>
+        <div class="dash-user">
+          <div class="dash-user-text">
+            <strong data-user="name">Athlete</strong>
+            <small data-user="email"></small>
+          </div>
+          <span class="role-badge" data-user="role">Member</span>
+          <span class="avatar" data-user="initial" aria-hidden="true">A</span>
+        </div>
+      </header>
+
+      <p class="sample-note">Showing sample data — your real stats will appear once the member system is connected.</p>
+
+      <section class="stat-grid" id="statGrid" aria-label="Key numbers"></section>
+
+      <div class="dash-cols">
+        <section class="panel" id="activity">
+          <div class="panel-head">
+            <div>
+              <h2 id="chartTitle">Active minutes</h2>
+              <p class="panel-sub" id="chartSub">This week</p>
+            </div>
+            <strong class="panel-total" id="chartTotal"></strong>
+          </div>
+          <div class="chart" id="chart" role="img"></div>
+          <div class="chart-tip" id="chartTip" hidden></div>
+          <details class="chart-table">
+            <summary>View as table</summary>
+            <table><thead><tr><th>Day</th><th id="tableUnit">Value</th></tr></thead><tbody id="chartRows"></tbody></table>
+          </details>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h2 id="listTitle">Upcoming</h2>
+              <p class="panel-sub" id="listSub"></p>
+            </div>
+            <a href="dash-schedule.html" class="panel-link">View all <svg><use href="#d-arrow"/></svg></a>
+          </div>
+          <ul class="dash-list" id="dashList" data-limit="3"></ul>
+        </section>
+      </div>
+
+      <section class="panel quick" aria-label="Quick actions">
+        <h2>Quick actions</h2>
+        <div class="quick-grid" id="quickGrid"></div>
+      </section>
+
+    </main>
+  </div>
+  <div class="dash-scrim" id="dashScrim"></div>
+
+  <script src="dashboard.js"></script>
+  <script src="animations.js"></script>
+  <script src="preloader.js"></script>
+</body>
+</html>
