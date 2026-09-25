@@ -38,27 +38,29 @@
     <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z" fill="currentColor"/></symbol>
   </svg>
 
+  <!-- ============ HEADER (fixed, outside the hero so it always stays on top) ============ -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="blog.html">Blogs</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li class="nav-auth">
+        <a href="login.html" class="nav-auth-login">Login</a>
+        <a href="signup.html" class="nav-auth-signup">Sign up</a>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-login">Login</a>
+      <a href="signup.html" class="btn btn-lime nav-signup">Sign up</a>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
   <!-- ============ HERO ============ -->
   <header class="hero hero-about" id="home">
-    <nav class="nav">
-      <a href="index.html" class="nav-logo"><img src="images/logo.webp" alt="Stackly" /></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About Us</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="blog.html">Blogs</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li class="nav-auth">
-          <a href="login.html" class="nav-auth-login">Login</a>
-          <a href="signup.html" class="nav-auth-signup">Sign up</a>
-        </li>
-      </ul>
-      <div class="nav-actions">
-        <a href="login.html" class="nav-login">Login</a>
-        <a href="signup.html" class="btn btn-lime nav-signup">Sign up</a>
-        <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
-      </div>
-    </nav>
 
     <div class="about-hero-content">
       <span class="hero-pill">ABOUT US</span>

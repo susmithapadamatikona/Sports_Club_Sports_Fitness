@@ -498,3 +498,29 @@ h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.025em; line-height: 1
   .nav-links .nav-auth-signup { background: var(--lime); color: #0b0f0c; }
   .nav-links .nav-auth-signup:hover { background: var(--lime-hover); color: #0b0f0c; }
 }
+
+/* ---------- Home upcoming events: countdown + highlights (fills the left column) ---------- */
+.ev-countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 460px; margin-top: 30px; }
+.ev-countdown div {
+  display: flex; flex-direction: column; align-items: center; padding: 14px 6px; border-radius: 12px;
+  background: #1c2a20; box-shadow: 6px 6px 14px rgba(0, 0, 0, .45), -4px -4px 12px rgba(255, 255, 255, .03);
+}
+.ev-countdown strong { font-size: 30px; font-weight: 800; color: var(--lime); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.ev-countdown span { font-size: 12px; color: #a9b3ab; margin-top: 4px; text-transform: uppercase; letter-spacing: .06em; }
+.ev-highlights { list-style: none; display: flex; gap: 0; margin-top: 26px; max-width: 460px; }
+.ev-highlights li { flex: 1; padding: 0 16px; border-left: 1px solid rgba(255, 255, 255, .12); }
+.ev-highlights li:first-child { padding-left: 0; border-left: 0; }
+.ev-highlights b { display: block; font-size: 20px; font-weight: 800; color: #fff; }
+.ev-highlights span { font-size: 13px; color: #a9b3ab; }
+@media (max-width: 480px) {
+  .ev-countdown { gap: 8px; }
+  .ev-countdown strong { font-size: 22px; }
+  .ev-countdown span { font-size: 10.5px; }
+  .ev-highlights li { padding: 0 10px; }
+  .ev-highlights b { font-size: 16px; }
+}
+
+/* Header lives outside the hero now; keep it above every section, card and image */
+.nav { z-index: 1000; }
+.scroll-progress { z-index: 1001; }
+.nav { color: #fff; }

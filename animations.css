@@ -69,7 +69,7 @@ html:not(.is-loaded) .dash-top, html:not(.is-loaded) .chart .bar { animation-pla
 
 /* ---------- Scroll progress bar ---------- */
 .scroll-progress {
-  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 150; pointer-events: none;
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 1001; pointer-events: none;
   background: var(--lime); box-shadow: 0 0 10px rgba(195, 245, 60, .6);
   transform: scaleX(0); transform-origin: left center;
 }

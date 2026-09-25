@@ -44,27 +44,29 @@
     <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </svg>
 
+  <!-- ============ HEADER (fixed, outside the hero so it always stays on top) ============ -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="blog.html">Blogs</a></li>
+      <li><a href="contact.html" class="active">Contact Us</a></li>
+      <li class="nav-auth">
+        <a href="login.html" class="nav-auth-login">Login</a>
+        <a href="signup.html" class="nav-auth-signup">Sign up</a>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-login">Login</a>
+      <a href="signup.html" class="btn btn-lime nav-signup">Sign up</a>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
   <!-- ============ HERO ============ -->
   <header class="hero hero-contact" id="home">
-    <nav class="nav">
-      <a href="index.html" class="nav-logo"><img src="images/logo.webp" alt="Stackly" /></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="blog.html">Blogs</a></li>
-        <li><a href="contact.html" class="active">Contact Us</a></li>
-        <li class="nav-auth">
-          <a href="login.html" class="nav-auth-login">Login</a>
-          <a href="signup.html" class="nav-auth-signup">Sign up</a>
-        </li>
-      </ul>
-      <div class="nav-actions">
-        <a href="login.html" class="nav-login">Login</a>
-        <a href="signup.html" class="btn btn-lime nav-signup">Sign up</a>
-        <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
-      </div>
-    </nav>
 
     <div class="contact-hero-content">
       <span class="dash-eyebrow">GET IN TOUCH</span>

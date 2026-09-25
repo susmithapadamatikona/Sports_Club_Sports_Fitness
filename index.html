@@ -37,27 +37,29 @@
     <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z" fill="currentColor"/></symbol>
   </svg>
 
+  <!-- ============ HEADER (fixed, outside the hero so it always stays on top) ============ -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="images/logo.webp" alt="Stackly" /></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="blog.html">Blogs</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li class="nav-auth">
+        <a href="login.html" class="nav-auth-login">Login</a>
+        <a href="signup.html" class="nav-auth-signup">Sign up</a>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-login">Login</a>
+      <a href="signup.html" class="btn btn-lime nav-signup">Sign up</a>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
   <!-- ============ HERO ============ -->
   <header class="hero" id="home">
-    <nav class="nav">
-      <a href="index.html" class="nav-logo"><img src="images/logo.webp" alt="Stackly" /></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="blog.html">Blogs</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li class="nav-auth">
-          <a href="login.html" class="nav-auth-login">Login</a>
-          <a href="signup.html" class="nav-auth-signup">Sign up</a>
-        </li>
-      </ul>
-      <div class="nav-actions">
-        <a href="login.html" class="nav-login">Login</a>
-        <a href="signup.html" class="btn btn-lime nav-signup">Sign up</a>
-        <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
-      </div>
-    </nav>
 
     <div class="hero-content">
       <span class="hero-eyebrow">SPORTS CLUB</span>
@@ -190,6 +192,17 @@
         <span class="pill-tag">UPCOMING EVENTS</span>
         <h2 id="evTitle">Inter club -<br />championship 2026</h2>
         <p id="evDesc">A thrilling competition featuring top athletes across multiple sports. Be there and witness the best in action!</p>
+        <div class="ev-countdown" id="evCountdown" data-date="Oct 18, 2026" aria-label="Time left until the event">
+          <div><strong data-cd="d">00</strong><span>Days</span></div>
+          <div><strong data-cd="h">00</strong><span>Hours</span></div>
+          <div><strong data-cd="m">00</strong><span>Minutes</span></div>
+          <div><strong data-cd="s">00</strong><span>Seconds</span></div>
+        </div>
+        <ul class="ev-highlights" id="evHighlights">
+          <li><b>6</b><span>Sports</span></li>
+          <li><b>400+</b><span>Athletes</span></li>
+          <li><b>12</b><span>Clubs</span></li>
+        </ul>
         <div class="events-bottom">
           <div class="ev-meta">
             <span><svg class="ico"><use href="#i-cal"/></svg> <em id="evDate">Oct 18, 2026</em></span>
@@ -201,13 +214,13 @@
       <div class="events-right">
         <div class="ev-feature"><img id="evImg" src="images/event-championship.webp" alt="Championship spectators" /></div>
         <div class="ev-list">
-          <button class="ev-item" data-title="City<br />Marathon 2026" data-desc="Run through the heart of the city with thousands of runners. All levels welcome — from 5K to the full marathon." data-date="Nov 12, 2026" data-place="City Centre" data-img="images/event-marathon.webp">
+          <button class="ev-item" data-title="City<br />Marathon 2026" data-desc="Run through the heart of the city with thousands of runners. All levels welcome — from 5K to the full marathon." data-date="Nov 12, 2026" data-hl="5K · 10K · 21K|Distances;3,000+|Runners;All|Levels" data-place="City Centre" data-img="images/event-marathon.webp">
             <img src="images/event-marathon.webp" alt="" /><div><strong>City Marathon</strong><small>Nov 12, 2026</small></div>
           </button>
-          <button class="ev-item" data-title="Tennis<br />Open 2026" data-desc="Our annual open tournament bringing together the club’s finest singles and doubles players." data-date="Dec 6, 2026" data-place="Indoor Courts" data-img="images/event-tennis.webp">
+          <button class="ev-item" data-title="Tennis<br />Open 2026" data-desc="Our annual open tournament bringing together the club’s finest singles and doubles players." data-date="Dec 6, 2026" data-hl="64|Players;Singles|&amp; Doubles;3|Days" data-place="Indoor Courts" data-img="images/event-tennis.webp">
             <img src="images/event-tennis.webp" alt="" /><div><strong>Tennis Open</strong><small>Dec 6, 2026</small></div>
           </button>
-          <button class="ev-item" data-title="Swimming<br />Gala 2027" data-desc="Sprint, relay and medley races for juniors and seniors in our Olympic-size pool." data-date="Jan 15, 2027" data-place="Aquatic Centre" data-img="images/event-swimming.webp">
+          <button class="ev-item" data-title="Swimming<br />Gala 2027" data-desc="Sprint, relay and medley races for juniors and seniors in our Olympic-size pool." data-date="Jan 15, 2027" data-hl="20|Races;150+|Swimmers;50 m|Pool" data-place="Aquatic Centre" data-img="images/event-swimming.webp">
             <img src="images/event-swimming.webp" alt="" /><div><strong>Swimming Gala</strong><small>Jan 15, 2027</small></div>
           </button>
         </div>

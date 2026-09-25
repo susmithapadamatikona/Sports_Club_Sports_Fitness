@@ -84,6 +84,10 @@ if (evImg) {
         evTitle.innerHTML = item.dataset.title;
         evDesc.textContent = item.dataset.desc;
         evDate.textContent = item.dataset.date;
+        const cd = document.getElementById("evCountdown");
+        if (cd) cd.dataset.date = item.dataset.date;
+        const hlEl = document.getElementById("evHighlights");
+        if (hlEl && item.dataset.hl) hlEl.innerHTML = item.dataset.hl.split(";").map((x) => { const [n, l] = x.split("|"); return `<li><b>${n}</b><span>${l}</span></li>`; }).join("");
         evPlace.textContent = item.dataset.place;
         evImg.style.opacity = 1;
       }, 250);
@@ -344,3 +348,16 @@ if (tagCloud && blogSearchBox) {
 document.querySelectorAll(".field").forEach((f) =>
   f.addEventListener("click", (e) => { if (!e.target.closest("button, input")) f.querySelector("input")?.focus(); })
 );
+
+// Home events: live countdown to the selected event
+const evCountdown = document.getElementById("evCountdown");
+if (evCountdown) {
+  const pad = (n) => String(Math.max(0, n)).padStart(2, "0");
+  const tick = () => {
+    const ms = Math.max(0, new Date(evCountdown.dataset.date + " 09:00").getTime() - Date.now());
+    const v = { d: Math.floor(ms / 864e5), h: Math.floor(ms / 36e5) % 24, m: Math.floor(ms / 6e4) % 60, s: Math.floor(ms / 1e3) % 60 };
+    evCountdown.querySelectorAll("[data-cd]").forEach((el) => (el.textContent = pad(v[el.dataset.cd])));
+  };
+  tick();
+  setInterval(tick, 1000);
+}
