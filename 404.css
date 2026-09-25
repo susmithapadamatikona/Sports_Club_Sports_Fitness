@@ -33,3 +33,18 @@
   .nf-btns .btn { flex: 1 1 auto; justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) { .nf-code span { animation: none; } }
+
+/* no header on this page: drop the space reserved for it and centre the message */
+.hero-404 { padding-top: 0; }
+.hero-404 .nf-content { padding-top: 60px; padding-bottom: 60px; }
+
+/* centre everything on the page, horizontally and vertically */
+.hero-404 { align-items: center; justify-content: center; text-align: center; }
+.hero-404::after { background: rgba(10, 14, 20, .62); }
+.hero-404 .nf-content { padding: 60px 24px; margin: 0 auto; max-width: 720px; display: flex; flex-direction: column; align-items: center; }
+.hero-404 .nf-eyebrow::after { content: ""; width: 18px; height: 2px; background: currentColor; border-radius: 2px; }
+.hero-404 .nf-code { justify-content: center; }
+.hero-404 .nf-content > p { margin-left: auto; margin-right: auto; }
+.hero-404 .nf-btns, .hero-404 .nf-links { justify-content: center; }
+.hero-404 .nf-links { width: 100%; }
+@media (max-width: 600px) { .hero-404 .nf-content { padding: 40px 16px; } }

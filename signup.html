@@ -78,19 +78,28 @@
         <div class="or-line"><span>Or</span></div>
 
         <form class="login-form" id="signupForm" novalidate>
-          <label class="field">
-            <svg><use href="#i-user"/></svg>
-            <input type="text" name="name" placeholder="Type your name" autocomplete="name" aria-label="Full name" required />
-          </label>
-          <label class="field">
-            <svg><use href="#i-mail"/></svg>
-            <input type="email" name="email" placeholder="Enter your Email" autocomplete="email" aria-label="Email" required />
-          </label>
-          <label class="field">
-            <svg><use href="#i-lock"/></svg>
-            <input type="password" name="password" id="loginPassword" placeholder="Password" autocomplete="new-password" aria-label="Password" required />
-            <button type="button" class="eye-btn" id="togglePassword" aria-label="Show password"><svg><use href="#i-eye"/></svg></button>
-          </label>
+          <div class="field-wrap">
+            <label class="field-label" for="fName">Full Name</label>
+            <span class="field">
+              <svg><use href="#i-user"/></svg>
+              <input type="text" name="name" id="fName" placeholder="Type your name" autocomplete="name" aria-label="Full name" required />
+            </span>
+          </div>
+          <div class="field-wrap">
+            <label class="field-label" for="fEmail">Email Address</label>
+            <span class="field">
+              <svg><use href="#i-mail"/></svg>
+              <input type="email" name="email" id="fEmail" placeholder="Enter your Email" autocomplete="email" aria-label="Email" required />
+            </span>
+          </div>
+          <div class="field-wrap">
+            <label class="field-label" for="loginPassword">Password</label>
+            <span class="field">
+              <svg><use href="#i-lock"/></svg>
+              <input type="password" name="password" id="loginPassword" placeholder="Password" autocomplete="new-password" aria-label="Password" required />
+              <button type="button" class="eye-btn" id="togglePassword" aria-label="Show password"><svg><use href="#i-eye"/></svg></button>
+            </span>
+          </div>
 
           <div class="login-row">
             <label class="remember" id="agreeLabel"><input type="checkbox" name="agree" /><span>I agree with <a href="#" class="terms-link">Terms</a> and <a href="#" class="terms-link">Privacy</a></span></label>

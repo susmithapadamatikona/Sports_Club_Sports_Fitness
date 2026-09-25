@@ -174,3 +174,10 @@
 }
 .login-form { grid-template-columns: minmax(0, 1fr); }
 .field input { width: 100%; }
+
+/* Labels above the input boxes (login + sign up) */
+.field-wrap { display: grid; gap: 8px; min-width: 0; }
+.field-label { font-size: 14.5px; font-weight: 600; color: #1f2937; cursor: pointer; }
+.field-wrap:has(.field.invalid) .field-label { color: #dc2626; }
+.login-form { gap: 20px; }
+.field { cursor: text; }

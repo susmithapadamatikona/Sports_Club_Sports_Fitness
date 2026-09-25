@@ -323,3 +323,24 @@ if (signupForm) {
     status.textContent = "Google sign-up will be available once it's connected.";
   });
 }
+
+// Blog sidebar tags: click a tag to search for it (click again to clear)
+const tagCloud = document.querySelector(".tag-cloud");
+const blogSearchBox = document.getElementById("blogSearch");
+if (tagCloud && blogSearchBox) {
+  tagCloud.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    const on = !b.classList.contains("active");
+    tagCloud.querySelectorAll("button").forEach((x) => x.classList.remove("active"));
+    b.classList.toggle("active", on);
+    blogSearchBox.value = on ? b.dataset.tag.replace("-", " ").replace("warm up", "warm-up") : "";
+    blogSearchBox.dispatchEvent(new Event("input"));
+    document.getElementById("postGrid").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+// Login / sign up: clicking anywhere in an input box (icon, padding) puts the cursor in it
+document.querySelectorAll(".field").forEach((f) =>
+  f.addEventListener("click", (e) => { if (!e.target.closest("button, input")) f.querySelector("input")?.focus(); })
+);

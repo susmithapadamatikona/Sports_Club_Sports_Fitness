@@ -77,15 +77,21 @@
         <div class="or-line"><span>Or</span></div>
 
         <form class="login-form" id="loginForm" novalidate>
-          <label class="field">
-            <svg><use href="#i-mail"/></svg>
-            <input type="email" name="email" placeholder="Enter your Email" autocomplete="email" aria-label="Email" required />
-          </label>
-          <label class="field">
-            <svg><use href="#i-lock"/></svg>
-            <input type="password" name="password" id="loginPassword" placeholder="Password" autocomplete="current-password" aria-label="Password" required />
-            <button type="button" class="eye-btn" id="togglePassword" aria-label="Show password"><svg><use href="#i-eye"/></svg></button>
-          </label>
+          <div class="field-wrap">
+            <label class="field-label" for="fEmail">Email Address</label>
+            <span class="field">
+              <svg><use href="#i-mail"/></svg>
+              <input type="email" name="email" id="fEmail" placeholder="Enter your Email" autocomplete="email" aria-label="Email" required />
+            </span>
+          </div>
+          <div class="field-wrap">
+            <label class="field-label" for="loginPassword">Password</label>
+            <span class="field">
+              <svg><use href="#i-lock"/></svg>
+              <input type="password" name="password" id="loginPassword" placeholder="Password" autocomplete="current-password" aria-label="Password" required />
+              <button type="button" class="eye-btn" id="togglePassword" aria-label="Show password"><svg><use href="#i-eye"/></svg></button>
+            </span>
+          </div>
 
           <div class="login-row">
             <label class="remember"><input type="checkbox" name="remember" /> Remember Me</label>
